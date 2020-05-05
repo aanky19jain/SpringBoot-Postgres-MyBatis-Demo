@@ -1,0 +1,16 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: Postgres-Demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/b008967
+    username: postgres
+    platform: postgres
+    
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+  type-aliases-package: com.postgres.model
+  configuration:
+    map-underscore-to-camel-case: true
+    
