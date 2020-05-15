@@ -12,4 +12,11 @@
 * `./mvnw spring-boot:run`
 
 ## Swagger URL
-* [Swagger URL](https://confluence.federated.fds/display/PRIC/Unified+Price+Management+API)
+* [Swagger URL](http://localhost:5000/swagger-ui/index.html)
+
+## This application uses:
+* Java 11
+* Maven as build tool
+* MyBatis
+* Postgres
+* springdoc-openapi-ui
