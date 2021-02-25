@@ -3,6 +3,7 @@ package com.postgres.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.postgres.mappers.CityMapper;
@@ -18,8 +19,17 @@ public class CityService {
 		return cityMapper.getAllCities();
 	}
 
+	@Cacheable("ticketsCache")
 	public City getCityPopulationByName(String name) {
-		return cityMapper.getCityPopulationByName(name);
+		City city = null;
+		try {
+			System.out.println("---sleep----");
+			Thread.sleep(5000);
+			city = cityMapper.getCityPopulationByName(name);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return city;
 	}
 
 	public boolean updateCityPopulationByName(String name, int population) {

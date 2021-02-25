@@ -13,4 +13,12 @@ mybatis:
   type-aliases-package: com.postgres.model
   configuration:
     map-underscore-to-camel-case: true
-    
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "metrics, caches"
+  endpoint:
+    caches:
+      enabled: true
